@@ -1,0 +1,10 @@
+pnpm-lock.yaml
+node_modules
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+node_modules
+dist
+/*.d.ts
