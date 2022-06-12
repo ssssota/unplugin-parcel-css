@@ -4,7 +4,7 @@ inputs:
   node-version:
     default: lts/*
 runs:
-  using: 'composite'
+  using: composite
   steps:
     - uses: pnpm/action-setup@v2
       with:
