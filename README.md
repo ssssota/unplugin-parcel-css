@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/unplugin-parcel-css?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-parcel-css)
 
-A Vite/Webpack/Rollup/esbuild plugin with
+A Vite/webpack/Rollup/esbuild plugin with
 [@parcel/css](https://github.com/parcel-bundler/parcel-css).
 
 @parcel/css is
@@ -37,7 +37,7 @@ export default {
 };
 ```
 
-### Webpack
+### webpack
 
 ```js
 // webpack.config.js
