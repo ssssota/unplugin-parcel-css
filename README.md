@@ -1,6 +1,6 @@
 # unplugin-parcel-css
 
-[![NPM version](https://img.shields.io/npm/v/unplugin-parcel-css?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-parcel-css)
+[![NPM version](https://img.shields.io/npm/v/unplugin-parcel-css)](https://www.npmjs.com/package/unplugin-parcel-css)
 
 A Vite/webpack/Rollup/esbuild plugin with
 [@parcel/css](https://github.com/parcel-bundler/parcel-css).
@@ -15,52 +15,96 @@ A Vite/webpack/Rollup/esbuild plugin with
 
 ```ts
 // vite.config.ts
-import ParcelCssPlugin from 'unplugin-parcel-css';
+import ParcelCSS from 'unplugin-parcel-css/vite';
 export default defineConfig({
   plugins: [
-    // ...
-    ParcelCssPlugin.vite(),
+    ParcelCSS({
+      /* options */
+    }),
   ],
 });
 ```
+
+Example: [`playground/`](./playground/)
 
 ### Rollup
 
-```js
+```ts
 // rollup.config.js
-import ParcelCssPlugin from 'unplugin-parcel-css';
+import ParcelCSS from 'unplugin-parcel-css/rollup';
 export default {
   plugins: [
-    // ...
-    ParcelCssPlugin.rollup(),
+    ParcelCSS({
+      /* options */
+    }),
   ],
 };
 ```
 
-### webpack
+You should use with css bundler like `rollup-plugin-css-only`.
 
-```js
+### Webpack
+
+```ts
 // webpack.config.js
 module.exports = {
+  // ...
   plugins: [
-    // ...
-    require('unplugin-parcel-css').webpack(),
+    require('unplugin-parcel-css/webpack')({
+      /* options */
+    }),
   ],
 };
 ```
 
-### esbuild
+You should use with `css-loader`.
 
-```js
-import { build } from 'esbuild';
-import ParcelCssPlugin from 'unplugin-parcel-css';
-build({
-  // ...
-  plugins: [
-    // ...
-    ParcelCssPlugin.esbuild(),
+### Next.js
+
+```ts
+module.exports = {
+  webpack: (config) => {
+    config.plugins.push(
+      require('unplugin-parcel-css/webpack')({
+        /* options */
+      })
+    );
+    return config;
+  },
+};
+```
+
+### Nuxt
+
+```ts
+// nuxt.config.js
+export default {
+  buildModules: [
+    [
+      'unplugin-parcel-css/nuxt',
+      {
+        /* options */
+      },
+    ],
   ],
-});
+};
+```
+
+> This module works for both Nuxt 2 and [Nuxt Vite](https://github.com/nuxt/vite)
+
+### Vue CLI
+
+```ts
+// vue.config.js
+module.exports = {
+  configureWebpack: {
+    plugins: [
+      require('unplugin-parcel-css/webpack')({
+        /* options */
+      }),
+    ],
+  },
+};
 ```
 
 ## Contribute
