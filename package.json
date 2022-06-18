@@ -64,7 +64,8 @@
     "prepublishOnly": "npm run build",
     "release": "bumpp --commit --push --tag && pnpm publish",
     "start": "esno src/index.ts",
-    "test": "vitest",
+    "fixtures": "esno scripts/pretest.ts",
+    "test": "npm run fixtures && vitest",
     "prepare": "husky install",
     "semantic-release": "semantic-release"
   },
