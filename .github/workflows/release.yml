@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/setup
+      - run: nr build
       - run: nr test
       - name: Release
         run: nx semantic-release
