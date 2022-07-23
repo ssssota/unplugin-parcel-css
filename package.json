@@ -3,6 +3,15 @@
   "version": "0.0.0-development",
   "packageManager": "pnpm@7.2.1",
   "description": "@parcel/css plugin for vite/rollup/webpack",
+  "license": "MIT",
+  "homepage": "https://github.com/ssssota/unplugin-parcel-css#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ssssota/unplugin-parcel-css.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ssssota/unplugin-parcel-css/issues"
+  },
   "keywords": [
     "unplugin",
     "vite",
@@ -11,18 +20,6 @@
     "transform",
     "parcel-css"
   ],
-  "homepage": "https://github.com/ssssota/unplugin-parcel-css#readme",
-  "bugs": {
-    "url": "https://github.com/ssssota/unplugin-parcel-css/issues"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ssssota/unplugin-parcel-css.git"
-  },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/index.js",
@@ -50,6 +47,9 @@
     },
     "./*": "./*"
   },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "*.d.ts"
