@@ -15,14 +15,18 @@ export default createUnplugin<Options>((options) => {
       return matcherRegex.test(id);
     },
     transform(css, id) {
-      const { code } = transform({
-        minify: true,
-        ...options,
-        code: Buffer.from(css),
-        filename: id,
-        sourceMap: false,
-      });
-      return code.toString('utf8');
+      try {
+        const { code } = transform({
+          minify: true,
+          sourceMap: false,
+          ...options,
+          code: Buffer.from(css),
+          filename: id,
+        });
+        return code.toString('utf8');
+      } catch {
+        return css;
+      }
     },
   };
 });
